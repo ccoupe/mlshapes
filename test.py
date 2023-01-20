@@ -6,6 +6,7 @@ import sys
 import websocket  # pip3 install websocket-client
 import base64
 import json
+import argparse
 
 def get_name(uri, bfr):
   ws = websocket.WebSocket()
@@ -18,11 +19,18 @@ def get_name(uri, bfr):
 def main():
   # hardcoded for me and my machines and network.
   #host = 'mini.local'
-  host = '192.168.1.2'  # bronco.local won't work! BUG somewhere 
+  host = '192.168.1.45'  # bronco.local won't work! BUG somewhere 
   port = 5439
-  #uri = f'ws://{host}:{port}'
   uri = f'ws://{host}:{port}/Cnn_Shapes'
+  ap = argparse.ArgumentParser()
+  ap.add_argument("--host", action='store', type=str, default='192.168.1.2',
+    nargs='?', help="host ip of mlshapes server")
+  ap.add_argument("-p", "--port", action='store', type=int, default='5439',
+    nargs='?', help="server port number, 5439 is default")
+  args = vars(ap.parse_args())
 
+  uri = f'ws://{args["host"]}:{args["port"]}/Cnn_Shapes'
+  print('using', uri)
   fp = './test_image/person.jpg'
   f = open(fp, 'rb')
   img = f.read()
