@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-source ~/anaconda3/etc/profile.d/conda.sh
-conda activate py3
+#source /home/ccoupe/miniconda3/etc/profile.d/conda.sh
+#eval "$(conda shell.bash hook)"
+#conda activate py3
+source `which virtualenvwrapper.sh`
+workon py3
 cd /usr/local/lib/mlshapes/
-python3 shape_server.py --port 4439
+python shape_server.py --port 4439

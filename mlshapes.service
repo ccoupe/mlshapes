@@ -3,6 +3,7 @@ Description=Person Detector Port 4466
 After=network-online.target
 
 [Service]
+User=ccoupe
 ExecStart=/usr/local/lib/mlshapes/mlshapes.sh
 Restart=on-abort
 
