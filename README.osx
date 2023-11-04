@@ -1,0 +1,6 @@
+mlshapes
+```
+$ docker build -t mlshape-arm64 .
+
+$ docker run -dp 4439:4439 -v --name=mlshapes mlshape-arm64
+```

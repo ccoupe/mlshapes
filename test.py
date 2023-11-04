@@ -18,9 +18,9 @@ def get_name(uri, bfr):
   
 def main():
   # hardcoded for me and my machines and network.
-  #host = 'mini.local'
-  host = '192.168.1.45'  # bronco.local won't work! BUG somewhere 
-  port = 5439
+  host = 'mini.local'
+  #host = '192.168.1.45'  # bronco.local won't work! BUG somewhere 
+  port = 4439
   uri = f'ws://{host}:{port}/Cnn_Shapes'
   ap = argparse.ArgumentParser()
   ap.add_argument("--host", action='store', type=str, default='192.168.1.2',

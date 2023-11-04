@@ -12,6 +12,8 @@ import time,threading, sched
 #import rpyc
 from lib.Algo import Algo
 import logging
+import logging.handlers
+from logging.handlers import SysLogHandler
 import ctypes
 import socket
 import asyncio
